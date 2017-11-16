@@ -1,22 +1,22 @@
-require_relative 'roll_dice.rb'
-require_relative 'team.rb'
+require_relative 'roll_dice'
+require_relative 'team'
 
 # main file to start the game
 
 # object needed
-all_players = Team.new
+# all_players = Team.new
 dice = RollDice.new
 
 # Create the teams
 # Who wants to play ?
-list_of_players = ["Camille", "Laura", "Betty", "Lucas", "Olie"]
-# list_of_players = all_players.add_players
-all_players.list(list_of_players)
+# list_of_players = ["Camille", "Laura", "Betty", "Lucas", "Olie"]
+list_of_players = Team.add_players
+Team.list(list_of_players.shuffle!)
 
 # Make the teams
-nb_teams = all_players.nb_teams
-teams = all_players.create_teams(list_of_players, nb_teams)
-
+nb_teams = Team.nb_teams
+teams = Team.create_teams(list_of_players.shuffle, nb_teams)
+puts "The teams are: #{teams}"
 
 
 # p dice.roll

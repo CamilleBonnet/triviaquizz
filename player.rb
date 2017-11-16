@@ -4,7 +4,5 @@ class Player
 
   def initialize(arg = {})
     @name = arg[:name]
-    @score = arg[:score] || 0
-    @color = arg[:color] || "no color"
   end
 end

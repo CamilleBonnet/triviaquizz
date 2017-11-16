@@ -1,17 +1,17 @@
 class View
-  def ask_new_player
+  def self.ask_new_player
     print "\nWho wants to play?\n   > "
     gets.chomp
   end
 
-  def list_players(players)
-    puts "there are #{players.size} players are :"
-    players.each do |name|
-      puts " > #{name}"
+  def self.list_players(players)
+    puts "There are #{players.size} players:"
+    players.each do |player|
+      puts " > #{player.name}"
     end
   end
 
-  def nb_of_teams
+  def self.nb_of_teams
     print "\nHow many teams?\n   > "
     gets.chomp
   end
