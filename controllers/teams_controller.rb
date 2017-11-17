@@ -11,6 +11,18 @@ class TeamsController
     View.nb_of_teams
   end
 
+  def list
+    @team_repository.all.each do |team|
+      View.list_teams(team)
+    end
+  end
+
+  def list_score
+    @team_repository.all.each do |team|
+      View.list_score(team)
+    end
+  end
+
   def place_players_in_teams(nb_teams)
     players = @player_repository.all.shuffle
     @nb_teams = nb_teams
@@ -39,16 +51,8 @@ class TeamsController
     end
   end
 
-  def list
-    @team_repository.all.each do |team|
-      View.list_teams(team)
-    end
-  end
-
-  def list_score
-    @team_repository.all.each do |team|
-      View.list_score(team)
-    end
+  def turn_to_play(team)
+    View.turn_to_play(team)
   end
 
   private

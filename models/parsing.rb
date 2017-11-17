@@ -12,15 +12,15 @@ class Parsing
 
  def self.new_question_creation(id, token)
   url ="https://opentdb.com/api.php?amount=1&category=#{id}&token=#{token}"
-  # JSON.parse(open(url).read)
-  {
-    "response_code"=>0,
-    "results"=>[{
-      "category"=>"Vehicles",
-      "type"=>"multiple",
-      "difficulty"=>"hard",
-      "question"=>"In 2014, over 6 million General Motors vehicles were recalled due to what critical flaw?",
-      "correct_answer"=>"Faulty ignition switch",
-      "incorrect_answers"=>["Malfunctioning gas pedal", "Breaking fuel lines", "Faulty brake pads"]}]}
+  JSON.parse(open(url).read)
+  # {
+  #   "response_code"=>0,
+  #   "results"=>[{
+  #     "category"=>"Vehicles",
+  #     "type"=>"multiple",
+  #     "difficulty"=>"hard",
+  #     "question"=>"In 2014, over 6 million General Motors vehicles were recalled due to what critical flaw?",
+  #     "correct_answer"=>"Faulty ignition switch",
+  #     "incorrect_answers"=>["Malfunctioning gas pedal", "Breaking fuel lines", "Faulty brake pads"]}]}
  end
 end
