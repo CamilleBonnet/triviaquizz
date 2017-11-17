@@ -29,4 +29,8 @@ class View
     end
   end
 
+  def self.list_score(team)
+    print "\nThe team \'#{team.name}\' has:\n"
+      print "  >> #{team.score} points\n"
+  end
 end

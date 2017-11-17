@@ -45,6 +45,12 @@ class TeamsController
     end
   end
 
+  def list_score
+    @team_repository.all.each do |team|
+      View.list_score(team)
+    end
+  end
+
   private
 
   def pick_players_in_teams(players)
